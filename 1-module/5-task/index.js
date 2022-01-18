@@ -1,0 +1,3 @@
+function truncate(str, maxlength) {
+  // ваш код...
+}
