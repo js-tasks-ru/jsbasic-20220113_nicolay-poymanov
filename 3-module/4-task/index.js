@@ -1,7 +1,7 @@
 function showSalary(users, age) {
   let filteredUsers = users.filter((user) => user.age <= age);
 
-  return filteredUsers.reduce(function(previousValue, item, index) {
+  return filteredUsers.reduce(function(previousValue, item, index, array) {
     previousValue += item.name + ', ' + item.balance;
 
     if (index < array.length - 1) {
