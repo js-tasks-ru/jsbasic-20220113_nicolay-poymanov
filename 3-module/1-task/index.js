@@ -1,0 +1,3 @@
+function namify(users) {
+  // ваш код...
+}
