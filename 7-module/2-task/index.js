@@ -7,7 +7,6 @@ export default class Modal {
   #modalTitleElement = null;
   #modalContentElement = null;
   #modalCloseButtonElement = null;
-  #keydownCloseEvent = null;
   #imagesPath = '/assets/images';
 
   constructor() {
@@ -51,13 +50,11 @@ export default class Modal {
   #addKeydownEvent() {
     const modal = this;
 
-    this.#keydownCloseEvent = (event) => {
+    document.body.addEventListener('keydown', (event) => {
       if (event.code === 'Escape') {
         modal.close();
       }
-    };
-
-    document.body.addEventListener('keydown', this.#keydownCloseEvent);
+    }, {once: true});
   }
 
   setTitle(title) {
@@ -80,7 +77,6 @@ export default class Modal {
 
     this.#modalTitleElement.innerText = null;
     this.#modalContentElement.innerHTML = null;
-    document.removeEventListener('keydown', this.#keydownCloseEvent);
     document.body.classList.remove(this.#modalOpenClass);
     document.querySelector(`.${this.#modalClass}`).remove();
   }
