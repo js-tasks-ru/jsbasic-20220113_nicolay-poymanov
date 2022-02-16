@@ -122,7 +122,7 @@ export default class RibbonMenu {
 
       const item = event.target;
 
-      document.querySelectorAll('.' + this.#itemClass).forEach((currentItem) => currentItem.classList.remove(this.#itemActiveClass));
+      this.#rootElement.querySelectorAll('.' + this.#itemClass).forEach((currentItem) => currentItem.classList.remove(this.#itemActiveClass));
       item.classList.add(this.#itemActiveClass);
 
       const selectItemEvent = new CustomEvent('ribbon-select', {
