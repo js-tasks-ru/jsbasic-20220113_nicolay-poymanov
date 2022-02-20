@@ -199,7 +199,13 @@ export default class Cart {
       this.renderModal();
 
       document.querySelector('.modal__body').addEventListener('click', (event) => {
-        const button = event.target.closest('.cart-counter__button');
+        let button = null;
+
+        if (event.target.closest('.cart-counter__button')) {
+          button = event.target.closest('.cart-counter__button');
+        } else if (event.target.classList.contains('cart-counter__button')) {
+          button = event.target;
+        }
 
         if (!button) {
           return null;
