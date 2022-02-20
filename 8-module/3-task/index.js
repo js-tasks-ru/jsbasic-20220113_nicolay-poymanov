@@ -48,7 +48,7 @@ export default class Cart {
     }
     else if (newCount === 0) {
       this.cartItems = this.cartItems.filter((currentCartItem) => {
-        return currentCartItem.id !== cartItem.id;
+        return currentCartItem.product.id !== cartItem.product.id;
       });
     } else {
       cartItem.count = newCount;
