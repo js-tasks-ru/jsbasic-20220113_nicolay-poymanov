@@ -153,7 +153,6 @@ export default class Cart {
 
     if (this.getTotalCount() === 0) {
       this.modal.close();
-      this.modal = new Modal();
       return null;
     }
 
@@ -187,11 +186,12 @@ export default class Cart {
       .then((response) => {
         this.cartItems = [];
         this.cartIcon.update(this);
-        this.modal.close();
+
+        document.querySelector('.modal__body').innerHTML = null;
+
         this.modal.setTitle('Success!');
         this.modal.setBody(createElement(`<p>Order successful! Your order is being cooked :) <br>
            We’ll notify you about delivery time shortly.<br><img src="/assets/images/delivery.gif"></p>`));
-        this.modal.open();
       });
   }
 
