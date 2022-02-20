@@ -153,6 +153,7 @@ export default class Cart {
 
     if (this.getTotalCount() === 0) {
       this.modal.close();
+      this.modal = new Modal();
       return null;
     }
 
