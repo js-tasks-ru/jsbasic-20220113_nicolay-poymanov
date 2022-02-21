@@ -32,7 +32,7 @@ export default class StepSlider {
 
     const thumbElement = document.createElement('div');
     thumbElement.classList.add('slider__thumb');
-    thumbElement.style.left = `left: ${valuePercents}%`;
+    thumbElement.style.left = `${valuePercents}%`;
 
     const thumbElementValueElement = document.createElement('span');
     thumbElementValueElement.classList.add('slider__value');
