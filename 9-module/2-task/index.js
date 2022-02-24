@@ -38,20 +38,12 @@ export default class Main {
   }
 
   async render() {
-    return new Promise(async (resolve, reject) => {
-      try {
-        this.#renderCarousel();
-        this.#renderRibbonMenu();
-        this.#renderSlider();
-        this.#renderCartIcon();
-        await this.#renderProducts();
-        this.#addEventListeners();
-
-        resolve();
-      } catch (error) {
-        reject(error);
-      }
-    });
+    this.#renderCarousel();
+    this.#renderRibbonMenu();
+    this.#renderSlider();
+    this.#renderCartIcon();
+    await this.#renderProducts();
+    this.#addEventListeners();
   }
 
   #renderCarousel() {
