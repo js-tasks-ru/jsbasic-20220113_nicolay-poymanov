@@ -75,7 +75,7 @@ export default class ProductGrid {
     return products.filter((product) => {
       const filterValue = this.#filters.vegeterianOnly;
 
-      if (filterValue === undefined) {
+      if (filterValue === undefined || filterValue === null) {
         return true;
       }
 
